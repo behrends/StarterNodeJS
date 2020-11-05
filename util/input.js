@@ -1,5 +1,7 @@
+const readline = require('readline-sync');
+
 function readName() {
-  const name = 'THE NAME!1!';
+  const name = readline.question('Wie heißt du? ');
   return name;
 }
 

@@ -1,3 +1,4 @@
 const { readName } = require('./util/input');
 
-console.log(readName());
+const name = readName();
+console.log(`Hallo, ${name}!`);
