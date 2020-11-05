@@ -1,16 +1,20 @@
-const { readName } = require('./util/input');
-const Database = require('@replit/database');
+const { getChoice, readName } = require('./util/input');
+const { displayEntries } = require('./util/output');
+const { getName, saveName } = require('./util/store');
 
-const name = readName();
-console.log(`Hallo, ${name}!`);
-
-const db = new Database()
-console.log(`NAME ${name} in der Datenbank speichern`);
-db.set('NAME', name);
-
-console.log('NAME aus der Datenbank lesen');
-db.get('NAME').then(value => {
-  console.log(`Der Name aus der Datenbank: ${value}`)
-});
-
-// TODO: Namen als Liste speichern
+while(true) {
+  let choice = getChoice();
+  switch(choice) {
+    case 0:   
+      let name = getName();       
+      console.log('Name: ' + name);
+      break;
+    case 1:
+      let newName = readName();
+      saveName(newName);
+      break;
+    case -1:
+      console.log('Auf Wiedersehen!');
+      process.exit();
+  }
+}
