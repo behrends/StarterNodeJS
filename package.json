@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/behrends/StarterNodeJS#readme",
   "dependencies": {
+    "@replit/database": "^2.0.0",
     "readline-sync": "^1.4.10"
   }
 }
