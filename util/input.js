@@ -1,7 +1,7 @@
 const readline = require('readline-sync');
 
 function getChoice() {
-  const choices = ['Name zeigen', 'Name ändern'];
+  const choices = ['Name zeigen', 'Name ändern', 'Namensliste zeigen', 'Name in Liste eintragen'];
   const index = readline.keyInSelect(choices, 'Was möchtest Du tun? ', {cancel: 'Beenden'});
   return index;
 }

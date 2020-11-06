@@ -1,6 +1,6 @@
 const { getChoice, readName } = require('./util/input');
 const { displayEntries } = require('./util/output');
-const { getName, saveName } = require('./util/store');
+const { getName, getNames, saveName, addName } = require('./util/store');
 
 while(true) {
   let choice = getChoice();
@@ -12,6 +12,14 @@ while(true) {
     case 1:
       let newName = readName();
       saveName(newName);
+      break;
+    case 2:
+      let names = getNames();
+      console.log(names);
+      break;
+    case 3:
+      let newName2 = readName();
+      addName(newName2);
       break;
     case -1:
       console.log('Auf Wiedersehen!');
